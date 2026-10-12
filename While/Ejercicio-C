@@ -1,0 +1,8 @@
+#Ingresar un número por input, y mostrarlo por consola. El número ingresado debe
+#estar comprendido entre 0 y 9 inclusive, caso contrario volver a pedirlo hasta que el
+#número ingresado esté dentro de ese rango.
+
+num = int(input("ingrese un numero"))
+
+while num < 0 or num > 9 :
+    num = int(input("ingrese un numero"))

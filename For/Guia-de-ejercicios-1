@@ -1,0 +1,7 @@
+#Ingresar un número. Mostrar los números desde 0 hasta el número ingresado.
+
+num = int(input("ingrese un numero: "))
+
+for  num2 in range (0, num+1) :
+    print(num2)
+    

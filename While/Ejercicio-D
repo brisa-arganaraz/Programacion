@@ -1,0 +1,14 @@
+#Ingresar una letra por input, validar que la misma sea „F‟ o „M‟, caso contrario
+#volver a pedirla. Una vez validado el ingreso de la letra, mostrar por consola:
+#Si la letra ingresada es „F‟: “FEMERNINO”
+#Si la letra ingresa es „M‟: “MASCULINO”.
+
+letra = input("ingrese una letra: ")
+
+while letra != "F" and letra != "M":
+    letra = input("ingrese una letra: ")
+
+if letra == "F":
+    print("FEMENINO")
+else:
+    print("MASCULINO")

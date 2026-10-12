@@ -1,0 +1,6 @@
+#Al ingresar una edad por input, solo se debe informar si la persona NO es
+#adolescente.
+
+edad = int(input("ingrese su edad: "))
+if not (edad >= 13 and edad <= 17) :
+    print("Usted no es adolecente")

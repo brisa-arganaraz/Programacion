@@ -1,0 +1,26 @@
+#Ingresar tantos números por input como el usuario desee, e informar por consola la
+#suma de los números positivos, y la multiplicación de los números negativos.
+
+suma_pos = 0
+mult_neg = 1 
+continuar = 'S'
+bandera = False
+
+while continuar == 'S' or continuar == 's':
+    numero = input("NUMERO: ")
+    numero = int(numero)
+    
+    if numero >= 0:
+        suma_pos = suma_pos + numero
+        #suma_pos += numero
+    else:
+        mult_neg = mult_neg * numero
+        #mult_neg *= numero
+        bandera = True
+    
+    continuar = input("Desea ingresar otro numero? [S|N]")
+    
+if bandera == False:
+    mult_neg = 0
+    
+print(f"La suma de los positivos es: {suma_pos}\nLa multiplicacion de los negativos es: {mult_neg}")

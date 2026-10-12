@@ -1,0 +1,11 @@
+"""Se ingresan un máximo de 10 números o hasta que el usuario ingrese el número 0. 
+Mostrar la suma y el promedio de todos los números"""
+
+num = int(input("ingrese un numero: "))
+suma = 0
+contador = 0 
+
+while  num > 0 or contador < 10:
+    num = int(input("ingrese un numero: "))
+
+

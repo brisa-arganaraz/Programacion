@@ -1,0 +1,26 @@
+#Ingresar dos números por input, transformarlos a entero (int).
+#Luego seleccionar la opción:
+#Sumar
+#Restar
+#Multiplicar
+#Dividir (numero_uno / numero_dos)
+#Mostar el resulto por consola.
+#Ejemplo: "la suma es 750"
+
+num = int(input("ingrese un numero entero: "))
+num2 = int(input("ingrese un segundo numero entero: "))
+opcion = input("Eliga una cuenta (Suma, Resta, Multiplicar, Divicion ): ")
+suma = num + num2
+resta = num - num2
+multiplicar = num * num2
+dividir = num / num2
+
+match opcion :
+    case "Suma"  :
+        print("la suma es:", suma)
+    case "Resta"  :
+        print("la resta es:", resta)
+    case "Multiplicar":
+        print("la multiplicacion es:", multiplicar)
+    case "Divicion":
+        print("la divicion es:", dividir)

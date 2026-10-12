@@ -1,0 +1,19 @@
+#Ingresar un número entero que represente una hora del día e informar:
+#Si está entre las 7 y las 11 : "Es de mañana."
+#Si está entre las 12 y las 19 : "Es de tarde."
+#Si está entre las 20 y las 23 o entre las 0 y las 6 : "Es de noche."
+#Si no está entre las 0 y las 23 : "la hora no existe."
+
+num = int(input("ingrese un numero entero que represente una hora del dia: "))
+
+match num :
+    case num if num >= 7 and num <= 11  :
+        print("Es de mañana.")
+    case num if num >= 12 and num <= 19  :
+            print("Es de tarde")
+    case num if num >= 20 and num <= 23 or num >= 0 and num <= 6 :
+                print("Es de noche.")
+    case _ :
+            print("la hora no existe")
+
+        

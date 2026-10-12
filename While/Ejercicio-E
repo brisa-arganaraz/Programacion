@@ -1,0 +1,12 @@
+#Ingresar cinco (5) números por input, e informar por consola la suma y el promedio
+#de los números ingresados.
+contador = 1 
+suma = 0
+while contador <= 5 :
+    num= int(input("ingrese un numero: "))
+    suma = suma + num
+    promedio = suma / 5
+    contador = contador + 1
+
+
+print("la suma de los numeros es de:", suma , "el promedio es", promedio)

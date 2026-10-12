@@ -1,0 +1,14 @@
+#Ingresar un mes por input e informar:
+#Si tiene 28 días.
+#Si tiene 30 días.
+#Si tiene 31 días. 
+
+mes = input("ingrese un mes: ")
+
+match mes :
+    case "Febrero"  :
+        print("Si tiene 28 días")
+    case "Abril" | "Junio" | "Septiembre" |"Noviembre" :
+        print("Si tiene 30 días.")
+    case _ :
+        print("Si tiene 31 días.")

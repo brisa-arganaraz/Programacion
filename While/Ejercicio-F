@@ -1,0 +1,17 @@
+#Ingresar tantos números por input como el usuario desee, e informar por consola la
+#suma y el promedio de los números ingresados.
+
+contador = 0
+suma = 0
+continuar = 'S'
+
+while continuar == 'S' or continuar == 's':
+    numero = input("NUMERO: ")
+    numero = int(numero)
+    suma = suma + numero
+    contador = contador + 1
+    continuar = input("Desea ingresar otro numero? [S|N]")
+    
+promedio = suma / contador
+
+print(f"La suma es: {suma}, y el promedio es: {promedio}")

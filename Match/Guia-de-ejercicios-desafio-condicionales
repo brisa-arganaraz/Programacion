@@ -1,0 +1,96 @@
+"""
+Requerimientos del programa:
+Solicitar al usuario:
+Cantidad de metros consumidos
+Tipo de cliente, que puede ser: Residencial, Comercial o Industrial.
+Calcular:
+Subtotal de consumo.
+Bonificaciones, si corresponde
+Recargos, si corresponde
+Subtotal, con recargos y bonificaciones.
+IVA aplicado (21%), si corresponde.
+Total final a pagar.
+Mostrar en pantalla el desglose de los cálculos.
+
+Tarifa base:
+Todas las facturas incluyen un cargo fijo de $7000 además del costo por consumo.
+El costo por metro cúbico (m³) de agua es de $200/m³.
+Bonificaciones y Recargos según tipo de cliente:
+
+Cliente Residencial:
+Si el consumo es menor a 30 m³, se aplica una bonificación del 10% sobre el costo del consumo.
+Si el consumo supera los 80 m³, se aplica un recargo del 15% sobre el costo del consumo.
+
+Cliente Comercial:
+Si el consumo es superior a 150 m³, se aplica una bonificación del 8% sobre el costo del consumo.
+Si el consumo supera los 300 m³, la bonificación aumenta al 12%.
+Si el consumo es menor a 50 m³, se aplica un recargo del 5%.
+
+Cliente Industrial:
+Si el consumo es superior a 500 m³, se aplica una bonificación del 20% sobre el costo del 
+consumo.
+Si el consumo supera los 1,000 m³, la bonificación aumenta al 30%.
+Si el consumo es menor a 200 m³, se aplica un recargo del 10%.
+
+Casos especiales:
+Si el cliente es Residencial y el total de la factura sin impuestos ni bonificaciones  es menor a $35000, se 
+aplica un descuento adicional del 5%.
+En todos los casos, se aplica el IVA del 21% sobre el total.
+
+"""
+
+cliente = input("ingrese que tipo de cliente es ( Residencial, Comercial o Industrial)")
+mts = int(input("Ingrese la cantidad de metros consumidos de agua: "))
+sub_consumo = mts * 200
+cargo_fijo = 7000
+recargo = 0
+bonificación = 0
+
+match cliente :
+    case "Residencial":
+        if mts >= 80  :
+            recargo = sub_consumo * 0.15
+        elif mts <= 30:
+            bonificación = sub_consumo * 0.10
+    case "Comercial":
+        if mts >= 300:
+                bonificación = sub_consumo * 0.12
+        elif mts >= 150:
+                bonificación = sub_consumo * 0.08
+        elif mts <= 50 :
+                recargo = sub_consumo * 0.05
+    case "Industrial":
+        if mts >= 1000:
+            bonificación = sub_consumo * 0.30
+        elif mts >= 500:
+            bonificación = sub_consumo * 0.20
+        elif mts <= 200 :
+            recargo = sub_consumo * 0.10
+    case _ :
+        print("No se encontro cliente")
+
+sin_bon = sub_consumo + cargo_fijo
+fact = sub_consumo + cargo_fijo + recargo - bonificación
+total_caso_esp = 0
+
+if cliente == "Residencial" and sin_bon < 35000 :
+    total_caso_esp = fact * 0.05
+    fact = fact - total_caso_esp
+
+iva = fact * 0.21
+fact = fact + iva
+
+print(f"""
+----- DESGLOSE DE FACTURACIÓN -----
+Tipo de cliente: {cliente}
+Metros consumidos: {mts} m³
+Subtotal de consumo (mts x $200): ${sub_consumo}
+Bonificación aplicada: ${bonificación}
+Recargo aplicado: ${recargo}
+Cargo fijo: ${cargo_fijo}
+Descuento especial (Residencial < $35000): ${total_caso_esp}
+IVA (21%): ${round(iva, 2)}
+TOTAL FINAL A PAGAR: ${round(fact, 2)}
+""")
+
+

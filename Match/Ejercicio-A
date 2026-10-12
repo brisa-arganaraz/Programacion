@@ -1,0 +1,19 @@
+#Ingresar un mes por input e informar por consola:
+#Si es Enero: "Que comiences bien el año!"
+#Si es Marzo: "A clases!"
+#Si es Julio: "Se vienen las vacaciones!"
+#Si es Diciembre: "Felices fiesta!" 
+
+mes = input("ingrese un mes: ")
+
+match mes :
+    case "Enero" :
+        print("Que comiences bien el año!")
+    case "Marzo" :
+        print("A clases!")
+    case "Julio" :
+        print("Se vienen las vacaciones!!")
+    case "Diciembre" :
+        print("Felices fiesta!")
+    
+            
